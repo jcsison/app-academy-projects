@@ -12,13 +12,15 @@ end
 
 def my_any?(arr)
     arr.each { |item| return true if proc.call(item) }
-    return false
+    false
 end
 
 def my_all?(arr)
-    arr.inject(true) { |bool, item| bool = false if !proc.call(item); bool }
+    arr.each { |item| return false if !proc.call(item) }
+    true
 end
 
 def my_none?(arr)
-    arr.inject(true) { |bool, item| bool = false if proc.call(item); bool }
+    arr.each { |item| return false if proc.call(item) }
+    true
 end
