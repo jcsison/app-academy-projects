@@ -13,19 +13,15 @@ def merge(hash1, hash2)
 end
 
 def censor(str, arr)
-    str.split().collect { |word|
-        arr.include?(word.downcase) ? word.split("").collect { |char|
+    str.split.map { |word|
+        arr.include?(word.downcase) ? word.split("").map { |char|
             "aeiou".include?(char.downcase) ? "*" : char
-        }.join() : word
+        }.join : word
     }.join(" ")
 end
 
 def power_of_two?(num)
-    if (num > 1 && num < 2) || num <= 0
-        return false
-    elsif num == 1 || num == 2
-        return true
-    else
-        return power_of_two?(num / 2.0)
-    end
+    return false if (num > 1 && num < 2) || num <= 0
+    return true if num == 1 || num == 2
+    power_of_two?(num / 2.0)
 end

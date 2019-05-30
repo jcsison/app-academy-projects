@@ -11,9 +11,9 @@ def count_positive_subarrays(arr)
 end
 
 def aba_translate(str)
-    str.split("").map { |char| "aeiou".include?(char) ? char + "b" + char : char }.join()
+    str.split("").map { |char| "aeiou".include?(char) ? char + "b" + char : char }.join
 end
 
 def aba_array(arr)
-    arr.map { |str| aba_translate(str) }
+    arr.map(&method(:aba_translate))
 end

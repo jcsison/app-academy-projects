@@ -3,7 +3,7 @@ def reverser(str, &proc)
 end
 
 def word_changer(str, &proc)
-    str.split().collect { |word| proc.call(word) }.join(" ")
+    str.split.map { |word| proc.call(word) }.join(" ")
 end
 
 def greater_proc_value(num, proc1, proc2)
@@ -15,5 +15,5 @@ def and_selector(arr, proc1, proc2)
 end
 
 def alternating_mapper(arr, proc1, proc2)
-    (0..arr.length - 1).collect { |i| i.even? ? proc1.call(arr[i]) : proc2.call(arr[i]) }
+    (0..arr.length - 1).map { |i| i.even? ? proc1.call(arr[i]) : proc2.call(arr[i]) }
 end

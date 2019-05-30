@@ -15,6 +15,6 @@ def yell(str)
 end
 
 def alternating_case(str)
-    arr = str.split()
-    (0..arr.length - 1).collect { |i| arr[i] = i.even? ? arr[i].upcase : arr[i].downcase }.join(" ")
+    arr = str.split
+    (0..arr.length - 1).map { |i| arr[i] = i.even? ? arr[i].upcase : arr[i].downcase }.join(" ")
 end

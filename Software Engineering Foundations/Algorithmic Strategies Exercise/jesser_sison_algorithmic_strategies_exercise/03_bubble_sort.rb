@@ -4,7 +4,8 @@
 # Do not use the built-in Array#sort
 
 def bubble_sort(arr)
-    :p while !(0..arr.length - 2).none? { |i| arr[i], arr[i + 1] = arr[i + 1], arr[i] if arr[i] > arr[i + 1] }; arr
+    nil while !(0..arr.length - 2).none? { |i| arr[i], arr[i + 1] = arr[i + 1], arr[i] if arr[i] > arr[i + 1] }
+    arr
 end
 
 p bubble_sort([2, 8, 5, 2, 6])      # => [2, 2, 5, 6, 8]

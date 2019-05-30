@@ -9,13 +9,13 @@ def largest_prime_factor(num)
 end
 
 def unique_chars?(str)
-    str.split("").inject(Hash.new(0)) { |hash, char| hash[char] += 1; hash }.to_a.all? { |arr| arr[1] == 1 }
+    str.split("").each_with_object(Hash.new(0)) { |char, hash| hash[char] += 1 }.to_a.all? { |arr| arr[1] == 1 }
 end
 
 def dupe_indices(arr)
-    (0..arr.length - 1).inject(Hash.new { |hash, key| hash[key] = [] }) { |hash, i| hash[arr[i]] << i; hash }.delete_if { |key, value| value.length < 2 }
+    (0..arr.length - 1).each_with_object(Hash.new { |hash, key| hash[key] = [] }) { |i, hash| hash[arr[i]] << i }.delete_if { |key, value| value.length < 2 }
 end
 
 def ana_array(arr1, arr2)
-    arr1.inject(Hash.new(0)) { |hash, char| hash[char] += 1; hash } == arr2.inject(Hash.new(0)) { |hash, char| hash[char] += 1; hash }
+    arr1.each_with_object(Hash.new(0)) { |char, hash| hash[char] += 1 } == arr2.each_with_object(Hash.new(0)) { |char, hash| hash[char] += 1 }
 end

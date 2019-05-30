@@ -3,7 +3,7 @@ def palindrome?(str)
 end
 
 def substrings(str)
-    (0..str.length - 1).inject([]) { |array, i| (i..str.length - 1).each { |j| array << str[i..j] }; array }
+    (0..str.length - 1).each_with_object([]) { |i, array| (i..str.length - 1).each { |j| array << str[i..j] } }
 end
 
 def palindrome_substrings(str)

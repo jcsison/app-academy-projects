@@ -4,16 +4,14 @@
 
 def compress_str(str)
     compress = []
-    repeat = 1
-    (0..str.length - 1).each { |i| 
-        if str[i] == str[i + 1]
-            repeat += 1
-        else
-            compress << (repeat == 1 ? [str[i]] : [repeat, str[i]])
-            repeat = 1
-        end
-    }
-    compress.flatten.join()
+    repeat = 0
+    (0..str.length - 1).each do |i|
+        repeat += 1
+        next unless str[i] != str[i + 1]
+        compress << (repeat == 1 ? str[i] : repeat.to_s + str[i])
+        repeat = 0
+    end
+    compress.join
 end
 
 p compress_str("aaabbc")        # => "3a2bc"

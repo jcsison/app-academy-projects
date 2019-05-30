@@ -3,7 +3,7 @@ def all_words_capitalized?(arr)
 end
 
 def no_valid_url?(arr)
-    arr.none? { |str| ["com", "net", "io", "org"].include?(str.split(".")[1]) }
+    arr.none? { |str| %w[com net io org].include?(str.split(".")[1]) }
 end
 
 def any_passing_students?(arr)

@@ -1,13 +1,13 @@
 def my_map(arr, &proc)
-    arr.inject([]) { |array, item| array << proc.call(item) }
+    arr.reduce([]) { |array, item| array << proc.call(item) }
 end
 
 def my_select(arr, &proc)
-    arr.inject([]) { |array, item| array << item if proc.call(item); array }
+    arr.each_with_object([]) { |item, array| array << item if proc.call(item) }
 end
 
 def my_count(arr, &proc)
-    arr.inject(0) { |count, item| count += proc.call(item) ? 1 : 0 }
+    arr.reduce(0) { |count, item| count += proc.call(item) ? 1 : 0 }
 end
 
 def my_any?(arr)
