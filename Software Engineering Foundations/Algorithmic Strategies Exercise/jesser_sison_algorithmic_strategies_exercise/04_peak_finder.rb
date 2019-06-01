@@ -4,11 +4,13 @@
 # The first or last element of the array is considered a "peak" if it is greater than it's one neighbor.
 
 def peak_finder(arr)
-    peaks = []
-    peaks << arr[0] if arr[0] > arr[1]
-    (1..arr.length - 2).select { |i| arr[i] > arr[i - 1] && arr[i] > arr[i + 1] }.each { |i| peaks << arr[i] }
-    peaks << arr[-1] if arr[-1] > arr[-2]
-    peaks
+  peaks = []
+  peaks << arr[0] if arr[0] > arr[1]
+  (1..arr.length - 2).select do
+    |i| arr[i] > arr[i - 1] && arr[i] > arr[i + 1] }.each { |i| peaks << arr[i]
+  end
+  peaks << arr[-1] if arr[-1] > arr[-2]
+  peaks
 end
 
 p peak_finder([1, 3, 5, 4])         # => [5]

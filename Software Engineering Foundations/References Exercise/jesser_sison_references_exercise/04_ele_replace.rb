@@ -7,8 +7,8 @@
 # to be the same before and after calling your method.
 
 def ele_replace!(array, hash)
-    array.each_with_index { |item, i| array[i] = hash[item] if hash[item] }
-    array
+  array.each_with_index { |item, i| array[i] = hash[item] if hash[item] }
+  array
 end
 
 

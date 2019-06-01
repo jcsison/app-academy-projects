@@ -2,7 +2,7 @@
 # the largest number. Solve this using the built-in inject.
 
 def max_inject(*arr)
-    arr.inject(0) { |largest, num| largest = num if num >= largest; largest }
+  arr.inject(0) { |largest, num| largest = num if num >= largest; largest }
 end
 
 p max_inject(1, -4, 0, 7, 5)  # => 7

@@ -2,7 +2,7 @@
 # The method should return a 2D array with n rows and m columns (this means that there are n subarrays, each of length m).
 
 def grid(n, m)
-    (0..n - 1).map { (0..m - 1).map { nil } }
+  n.times.map { m.times.map { nil } }
 end
 
 result_1 = grid(2, 3)

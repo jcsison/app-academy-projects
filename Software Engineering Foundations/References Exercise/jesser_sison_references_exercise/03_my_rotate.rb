@@ -11,7 +11,9 @@
 
 
 def my_rotate!(array, amt)
-    array = (0..array.length - 1).each_with_object([]) { |i, temp| temp << array[(i + amt) % array.length] }
+  array = array.length.times.each_with_object([]) do |i, temp|
+    temp << array[(i + amt) % array.length]
+  end
 end
 
 
