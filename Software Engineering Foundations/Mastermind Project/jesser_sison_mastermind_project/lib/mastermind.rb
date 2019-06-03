@@ -6,8 +6,8 @@ class Mastermind
   end
 
   def print_matches(code)
-    puts "There are %i exact matches." % [@secret_code.num_exact_matches(code)]
-    puts "There are %i near matches." % [@secret_code.num_near_matches(code)]
+    printf("There are %i exact matches.\n", @secret_code.num_exact_matches(code))
+    printf("There are %i near matches.\n", @secret_code.num_near_matches(code))
   end
 
   def ask_user_for_guess

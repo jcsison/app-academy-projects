@@ -16,7 +16,7 @@ def my_any?(arr)
 end
 
 def my_all?(arr)
-  arr.each { |item| return false if !proc.call(item) }
+  arr.each { |item| return false unless proc.call(item) }
   true
 end
 

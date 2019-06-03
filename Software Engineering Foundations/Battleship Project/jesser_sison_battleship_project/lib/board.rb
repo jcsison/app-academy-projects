@@ -6,7 +6,7 @@ class Board
   end
 
   def initialize(n)
-    @grid = n.times.collect { Array.new(n, :N) }
+    @grid = n.times.map { Array.new(n, :N) }
     @size = n**2
   end
 

@@ -30,7 +30,7 @@ class Array
 
   def my_uniq
     self.each_with_object([]) do |item, array|
-      array << item if !array.include?(item)
+      array << item unless array.include?(item)
     end
   end
 

@@ -35,7 +35,7 @@ class Battleship
   def turn
     if !@board.attack(@player.get_move)
       @remaining_misses -= 1
-      puts "You have %i remaining misses." % [@remaining_misses]
+      printf("You have %i remaining misses.\n", @remaining_misses)
     end
     @board.print
   end
