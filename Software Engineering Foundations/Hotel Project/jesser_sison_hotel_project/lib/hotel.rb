@@ -36,7 +36,7 @@ class Hotel
 
   def list_rooms
     @rooms.each do |room_name, room|
-      printf("%s: %i\n", room_name, room.available_space.to_i)
+      puts "%s: %i" [room_name, room.available_space.to_i]
     end
   end
 end

@@ -69,7 +69,7 @@ class Hangman
 
   def game_over?
     return false unless self.win? || self.lose?
-    printf("Secret word: %s\n", @secret_word)
+    puts "Secret word: %s" % [@secret_word]
     true
   end
 end
